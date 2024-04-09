@@ -9,5 +9,6 @@ namespace GetJobHelper.Web.Services.Contracts
         Task<ActionResult<RecruiterDTO>> GetRecruiterByIdAsync(int Id);
         Task<ActionResult<RecruiterDTO>> CreateRecruiter(RecruiterDTO recruiterDTO);
         Task<ActionResult<RecruiterDTO>> UpdateRecruiter(int Id, RecruiterDTO recruiterDto);
+        Task<ActionResult> DeleteRecruiterAsync(int Id);
     }
 }

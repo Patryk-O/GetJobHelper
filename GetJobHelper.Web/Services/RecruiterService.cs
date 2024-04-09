@@ -9,7 +9,7 @@ namespace GetJobHelper.Web.Services
     {
         private readonly HttpClient httpClient;
         public RecruiterService(HttpClient httpClient)
-        { 
+        {
             this.httpClient = httpClient;
         }
         public Task<ActionResult<RecruiterDTO>> CreateRecruiter(RecruiterDTO recruiterDTO)
@@ -39,6 +39,16 @@ namespace GetJobHelper.Web.Services
         public Task<ActionResult<RecruiterDTO>> UpdateRecruiter(int Id, RecruiterDTO recruiterDto)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<ActionResult> DeleteRecruiterAsync(int Id)
+        {
+            var response = await httpClient.DeleteAsync($"api/recruiter/Id?Id={Id}");
+            if (response.IsSuccessStatusCode)
+            {
+                return new NoContentResult();
+            }
+            throw new Exception();
         }
     }
 }

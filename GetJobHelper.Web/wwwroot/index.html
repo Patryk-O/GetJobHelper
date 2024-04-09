@@ -8,9 +8,9 @@
     <base href="/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="css/loader.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <link href="GetJobHelper.Web.styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/loader.css" />
     <link href="manifest.webmanifest" rel="manifest" />
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
@@ -18,7 +18,9 @@
 
 <body>
     <div id="app">
-        <div class="mx-auto p-2 loader"></div>
+        <div class="position-absolute top-50 start-50">
+            <div class="loader "></div>
+        </div>
     </div>
 
     <div id="blazor-error-ui">

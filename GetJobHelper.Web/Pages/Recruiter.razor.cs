@@ -12,6 +12,11 @@ namespace GetJobHelper.Web.Pages
 
         public required IEnumerable<RecruiterDTO> Recruiters { get; set; }
 
+        public async Task DeleteRecruiter(int Id)
+        {
+            await RecruiterService.DeleteRecruiterAsync(Id);
+        }
+
         protected override async Task OnInitializedAsync()
         {
             Recruiters = await RecruiterService.GetAllRecruitersAsync();

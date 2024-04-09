@@ -1,16 +1,20 @@
 ﻿@page "/recruiter"
-@inherits RecruiterBase;
+@inherits RecruiterBase
 
 <PageTitle>Recruiter List</PageTitle>
 
 @if (Recruiters == null){
-    <div class="d-flex justify-content-center">
-        <div class="loader "></div>
-    </div>
+    <Loader />
 }
 else
 {
-    <h3>Recruiter List:</h3>
+    <div class="d-flex mb-3">
+        <h3 class="me-auto p-2">Recruiter List:</h3>
+        <div class="p-2">
+            <a class="btn btn-primary" href="/recruiter/recruiteradd" role="button">Add</a>
+        </div>
+    </div>
+    
     <div class="row">
         @foreach (var item in Recruiters)
         {
@@ -24,6 +28,10 @@ else
                         <a href="@item.Link">@item.Link</a>
                         <h5>Message sended: @item.MessageSend</h5>
                         <h5>Message answered @item.Answered</h5>
+                    </div>
+                    <div class="card-footer">
+                            <a class="btn btn-primary">Edit</a>
+                            <button class="btn btn-danger" @onclick="@(e => DeleteRecruiter(item.Id))">Delete</button>
                     </div>
                 </div>
             </div>
